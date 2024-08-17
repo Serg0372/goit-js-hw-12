@@ -107,7 +107,6 @@ galleryBox.style.listStyle = 'none';
    captionsData: 'alt',  
    captionDelay: 250, 
    
-   
 });
 
 
