@@ -84,7 +84,7 @@ const imageCard = images
   )
   .join(' ');
 
-galleryBox.insertAdjacentHTML('beforeend', imageCard);
+galleryBox.innerHTML = imageCard;
 
 galleryBox.style.display = 'flex';
 galleryBox.style.flexWrap = 'wrap';
