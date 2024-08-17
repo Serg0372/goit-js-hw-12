@@ -1,8 +1,5 @@
-// Описаний в документації
-import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
-import "simplelightbox/dist/simple-lightbox.min.css";
-
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const images = [
   {
@@ -72,7 +69,8 @@ const images = [
 
 const galleryBox = document.querySelector('.gallery');
 
-const imageCard = images.map(
+const imageCard = images
+  .map(
     image => `<li class="gallery-item">
      <a class="gallery-link" href="${image.original}">
        <img
@@ -82,11 +80,11 @@ const imageCard = images.map(
          width="360" height="200"
        />
      </a>
-   </li>`).join(' ');
+   </li>`
+  )
+  .join(' ');
 
-
-galleryBox.insertAdjacentHTML("beforeend", imageCard);
-
+galleryBox.insertAdjacentHTML('beforeend', imageCard);
 
 galleryBox.style.display = 'flex';
 galleryBox.style.flexWrap = 'wrap';
@@ -97,16 +95,9 @@ galleryBox.style.margin = '0';
 galleryBox.style.marginBottom = '40px';
 galleryBox.style.listStyle = 'none';
 
-
-// new SimpleLightbox('.some-element a', { /* options */ });
-
-
- new SimpleLightbox('.gallery a', {
+new SimpleLightbox('.gallery a', {
   overlay: true,
-  overlayOpacity: 0.9,    
-   captionsData: 'alt',  
-   captionDelay: 250, 
-   
+  overlayOpacity: 0.9,
+  captionsData: 'alt',
+  captionDelay: 250,
 });
-
-
