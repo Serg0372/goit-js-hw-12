@@ -97,7 +97,7 @@ galleryBox.style.listStyle = 'none';
 
 new SimpleLightbox('.gallery a', {
   overlay: true,
-  overlayOpacity: 0.9,
+  overlayOpacity: 1,
   captionsData: 'alt',
   captionDelay: 250,
 });
