@@ -1,0 +1,82 @@
+/* @import "flatpickr/dist/flatpickr.min.css";
+@import "izitoast/dist/css/iziToast.min.css"; */
+
+.time-section {
+  margin-top: 44px;
+}
+
+.time-section-box {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+ input {
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  background: #fff;
+  border: 1px solid #808080;
+  padding: 14px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #2e2f42;
+}
+
+ input:active {
+  border: 1px solid #4e75ff;
+}
+
+ button {
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 75px;
+  height: 40px;
+  border: 1px solid #808080;
+  background: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+ button:hover {
+  background-color: #6c8cff;
+}
+
+ button:disabled {
+  background-color: #cfcfcf;
+  color: #989898;
+}
+
+.timer {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.value {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: center;
+}
