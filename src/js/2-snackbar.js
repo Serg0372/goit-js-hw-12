@@ -24,7 +24,6 @@ form.addEventListener('submit', event => {
   promise
     .then(delay => {
       iziToast.success({
-        title:none;
         position: 'topRight',
         message: `✅ Fulfilled promise in ${delay}ms`,
       });
