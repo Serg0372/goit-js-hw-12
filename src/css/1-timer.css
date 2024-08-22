@@ -26,9 +26,9 @@
   color: #2e2f42;
 }
 
- input:active {
+ /* input:active {
   border: 1px solid #4e75ff;
-}
+} */
 
  button {
   border-radius: 8px;

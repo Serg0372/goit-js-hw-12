@@ -41,6 +41,8 @@ btnStart.addEventListener('click', startTimer);
 let intervalId = 0;
 
 function startTimer() {
+  btnStart.disabled = true; 
+  input.disabled = true;
   intervalId = setInterval(() => {
     const currentTime = Date.now();
     const deltaTime = userSelectedDate - currentTime;
@@ -52,7 +54,7 @@ function startTimer() {
 
     const time = convertMs(deltaTime);
     updateTimer(time);
-  }, 200);
+  }, 1000);
 }
 
 function convertMs(ms) {
