@@ -3,22 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home work 10</title>
+    <title>Home work 11</title>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
     </style>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header class="header">
+
+
+
+   <section class="gallery-section">
+
       <div class="container">
-        <nav>
-          <ul>
-            <li class="nav-link"><a href="./1-timer.html">Timer</a></li>
-            <li class="nav-link"><a href="./2-snackbar.html">Snackbar</a></li>
-          </ul>
-        </nav>
+
+        <form class="search-form js-search-form">
+
+          <input class="search-input js-search-input" type="text" name="user_query" placeholder="Search images..."  required />
+
+          <button class="search-btn" type="submit">Search</button>
+        </form>
+
+        <ul class="gallery js-gallery"></ul>
+
+       
+
+        <span class="loader js-loader is-hidden"></span>
       </div>
-    </header>
+
+    </section>
+
+
+    <script type="module" src="./main.js"></script>
   </body>
 </html>
