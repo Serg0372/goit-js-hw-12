@@ -2,38 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home work 11</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-    </style>
+    <title>Homework 12</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-
-
-
-   <section class="gallery-section">
-
+    
+    <section class="section section-hw-12 js-section-hw-12">
       <div class="container">
-
-        <form class="search-form js-search-form">
-
-          <input class="search-input js-search-input" type="text" name="user_query" placeholder="Search images..."  required />
-
-          <button class="search-btn" type="submit">Search</button>
+        <form class="form-hw-12 js-form-hw-12">
+          <input
+            class="input-hw-12 js-input-hw-12"
+            type="text"
+            name="user_query"
+            placeholder="Search images..."
+            required
+          />
+          <button class="button-hw-12 js-button-hw-12" type="submit">
+            Search
+          </button>
         </form>
 
-        <ul class="gallery js-gallery"></ul>
+        <ul class="gallery-hw-12 js-gallery-hw-12"></ul>
 
-       
+        
 
-        <span class="loader js-loader is-hidden"></span>
+        <button class="button-load-more-hw-12 js-button-load-more-hw-12 is-hidden" type="button">
+            Load More
+          </button>
+<span class="loader-hw-12 js-loader-hw-12"></span>
+
       </div>
-
     </section>
-
-
     <script type="module" src="./main.js"></script>
   </body>
 </html>
