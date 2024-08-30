@@ -15,4 +15,5 @@ export const fetchPhotos = (searchQ, page)=> {
     },
   };
   return axios.get(``, axiosOptions);
+  
 };
