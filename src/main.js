@@ -1,6 +1,7 @@
 import iziToast from 'izitoast';
 import SimpleLightbox from 'simplelightbox';
 
+
 import { createGalleryCard } from './js/render-functions';
 import { fetchPhotos } from './js/pixabay-api';
 
