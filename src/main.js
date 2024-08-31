@@ -1,6 +1,6 @@
 import iziToast from 'izitoast';
 import SimpleLightbox from 'simplelightbox';
- 
+
 import { createGalleryCard } from './js/render-functions';
 import { fetchPhotos } from './js/pixabay-api';
 
@@ -25,9 +25,13 @@ const onSearchFormSubmit = async event => {
   try {
     event.preventDefault();
 
-    searchFormValue = searchFormEl.elements.user_query.value;
-    currentPage = 1;
+    searchFormValue = searchFormEl.elements.user_query.value.trim();
 
+    if (searchFormValue === '') {
+      return;
+    }
+
+    currentPage = 1;
     searchLoaderEl.classList.remove('is-hidden');
     searcGalleryEl.innerHTML = '';
 
@@ -40,26 +44,28 @@ const onSearchFormSubmit = async event => {
         position: 'topRight',
       });
       searcGalleryEl.innerHTML = '';
+      searchBtnLoadMore.classList.add('is-hidden');
       return;
     }
 
-    const galleryCardTemplay = response.data.hits
+    const galleryCardTemplate = response.data.hits
       .map(imgDetails => createGalleryCard(imgDetails))
       .join('');
 
-    searcGalleryEl.innerHTML = galleryCardTemplay;
-
+    searcGalleryEl.innerHTML = galleryCardTemplate;
     searchBtnLoadMore.classList.remove('is-hidden');
-
     gallery.refresh();
 
     if (Math.ceil(response.data.totalHits / 15) === currentPage) {
       searchBtnLoadMore.classList.add('is-hidden');
+      iziToast.info({
+        message: "We're sorry, but you've reached the end of search results",
+        position: 'topRight',
+      });
     }
   } catch (err) {
     iziToast.error({
-      message:
-        'Sorry, there are no images matching your search query. Please try again!',
+      message: err.message,
       position: 'topRight',
     });
   } finally {
@@ -74,11 +80,11 @@ const onLoadMoreBtnClick = async event => {
 
     const response = await fetchPhotos(searchFormValue, currentPage);
 
-    const galleryCardTemplay = response.data.hits
+    const galleryCardTemplate = response.data.hits
       .map(imgDetails => createGalleryCard(imgDetails))
       .join('');
 
-    searcGalleryEl.insertAdjacentHTML('beforeend', galleryCardTemplay);
+    searcGalleryEl.insertAdjacentHTML('beforeend', galleryCardTemplate);
     const smoothScroll = () => {
       const { height } =
         searcGalleryEl.firstElementChild.getBoundingClientRect();
@@ -92,9 +98,17 @@ const onLoadMoreBtnClick = async event => {
 
     if (Math.ceil(response.data.totalHits / 15) === currentPage) {
       searchBtnLoadMore.classList.add('is-hidden');
+      iziToast.info({
+        message: "We're sorry, but you've reached the end of search results",
+        position: 'topRight',
+      });
     }
   } catch (err) {
-    iziToast.error({ message: err.message, position: 'topRight' });
+    iziToast.error({
+        message:
+          'Sorry, there are no images matching your search query. Please try again!',
+        position: 'topRight',
+      });
   } finally {
     searchLoaderEl.classList.add('is-hidden');
   }
